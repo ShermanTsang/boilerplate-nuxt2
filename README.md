@@ -1,6 +1,6 @@
-# ShareManBoxV3FrontEnd
+# NuxtModel
 
-> ShareManBox front-end version 3 with nuxt.js.
+> It's ShareMan's nuxt based project model.
 
 ## Build Setup
 

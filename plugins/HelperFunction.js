@@ -31,7 +31,7 @@ export default function ({ store }) {
       return ''
     }
     const isWithDomain = url.indexOf('http://') !== -1 || url.indexOf('https://') !== -1
-    const is3rdResource = url.indexOf('cdn.share-man.com') === -1 && url.indexOf('sharemancdn.ochase.com') === -1
+    const is3rdResource = url.indexOf('cdn.test.com') === -1
     const resourceDomain = isProxy ? '/oss/' : `https://${config['oss.domain.https']}`
     return isWithDomain
       ? (is3rdResource ? url : `${resourceDomain}/${url.replace(/^http(s)?:\/\/(.*?)\//, '')}`)
@@ -108,41 +108,6 @@ export default function ({ store }) {
     return seoConfig[type].value || ''
   }
 
-  function getModuleConfig(module) {
-    const mainConfigList = store.getters.moduleList || []
-    const configList = {
-      day: {
-        name: '日迹', dateField: 'date'
-      },
-      blog: {
-        name: '博文', dateField: 'datetime'
-      },
-      movie: {
-        name: '观影', dateField: 'datetime'
-      },
-      project: {
-        name: '项目', dateField: 'datetime_start'
-      },
-      plan: {
-        name: '计划', dateField: 'datetime_start'
-      },
-      idea: {
-        name: '想法', dateField: 'datetime'
-      },
-      mailbox: {
-        name: '邮局', dateField: 'datetime'
-      }
-    }
-    if (mainConfigList && mainConfigList.length > 0) {
-      mainConfigList.forEach((item) => {
-        if (configList[item.url]) {
-          configList[item.url] = { ...configList[item.url], ...item }
-        }
-      })
-    }
-    return module ? configList[module] : configList
-  }
-
   function checkFormValidate(validateList = {}) {
     const validateValueList = Object.values(validateList) || {}
     const falseItem = validateValueList.find(item => item === false)
@@ -158,6 +123,5 @@ export default function ({ store }) {
   Vue.prototype.$getOssUrl = getOssUrl
   Vue.prototype.$getStringCount = getStringCount
   Vue.prototype.$getSeoInfo = getSeoInfo
-  Vue.prototype.$getModuleConfig = getModuleConfig
   Vue.prototype.$checkFormValidate = checkFormValidate
 }
