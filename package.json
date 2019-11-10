@@ -19,7 +19,7 @@
     "dayjs": "^1.8.16",
     "lodash": "^4.17.11",
     "normalize.css": "^8.0.1",
-    "nuxt": "^2.4.0",
+    "nuxt": "^2.10.0",
     "vue-lazyload": "^1.2.6"
   },
   "devDependencies": {
