@@ -25,7 +25,7 @@ export default {
     }
   },
   async asyncData({ $axios, query }) {
-    const { data: timeline, meta } = await $axios.$get('/api/common/timeline', {
+    const { data: timeline, meta } = await $axios.$get('/api/url', {
       params: {
         pageSize: 10,
         page: query.page
@@ -33,7 +33,7 @@ export default {
     })
     return {
       data: {
-        timeline
+        list
       },
       meta
     }
@@ -41,18 +41,6 @@ export default {
   mounted() {
   },
   methods: {
-    async requestTimeline() {
-      const requestPage = this.status.currentPage + 1
-      const { data: timeline, meta } = await this.$axios.$get('/api/common/timeline', {
-        params: {
-          pageSize: 10,
-          page: requestPage
-        }
-      })
-      this.data.timeline = this.data.timeline.concat(timeline)
-      this.meta = meta
-      this.status.currentPage++
-    }
   }
 }
 </script>
