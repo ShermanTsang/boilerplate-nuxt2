@@ -3,9 +3,6 @@
 
 <template>
   <layout-container>
-    <Blocker height="40px" />
-    <Nameplate title="时间轴" sub-title="timeline" />
-    <Timeline :timeline="data.timeline" :meta="meta" @on-request-more="requestTimeline()" />
   </layout-container>
 </template>
 
@@ -14,9 +11,9 @@ export default {
   layout: 'default',
   head() {
     return {
-      title: '时间轴',
+      title: 'index',
       meta: [
-        { hid: 'index', name: 'description', content: this.$getSeoInfo('description', '我的时间轴') }
+        { hid: 'index', name: 'description', content: this.$getSeoInfo('description', 'index') }
       ]
     }
   },
