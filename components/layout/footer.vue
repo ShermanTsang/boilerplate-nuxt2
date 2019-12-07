@@ -58,12 +58,12 @@
 
 <template>
   <footer class="footer">
-    <layout-container class="footer__container">
+    <LayoutContainer class="footer__container">
       <div class="footer__container__page">
       </div>
       <div class="footer__container__info">
       </div>
-    </layout-container>
+    </LayoutContainer>
   </footer>
 </template>
 

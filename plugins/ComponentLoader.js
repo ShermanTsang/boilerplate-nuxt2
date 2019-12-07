@@ -26,8 +26,10 @@ const nextComponents = require.context(
 )
 nextComponents.keys().forEach((fileName) => {
   const componentConfig = nextComponents(fileName)
-  const componentName = kebabCase(
-    fileName.replace(/^\.\/(.*)\.\w+$/, '$1')
+  const componentName = upperFirst(
+    camelCase(
+      fileName.replace(/^\.\/(.*)\.\w+$/, '$1')
+    )
   )
   Vue.component(componentName, componentConfig.default || componentConfig)
 })

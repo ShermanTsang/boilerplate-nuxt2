@@ -2,7 +2,7 @@
 </style>
 
 <template>
-  <layout-container>
+  <LayoutContainer>
     <h1 v-if="error.statusCode === 404">
       页面不存在
     </h1>
@@ -12,5 +12,5 @@
     <nuxt-link to="/">
       首页
     </nuxt-link>
-  </layout-container>
+  </LayoutContainer>
 </template>

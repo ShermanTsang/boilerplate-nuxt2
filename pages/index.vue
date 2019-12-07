@@ -2,8 +2,8 @@
 </style>
 
 <template>
-  <layout-container>
-  </layout-container>
+  <LayoutContainer>
+  </LayoutContainer>
 </template>
 
 <script>
