@@ -49,14 +49,14 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    { src: '@/plugins/HelpFunction', ssr: true },
-    { src: '@/plugins/HttpLib', ssr: true },
-    { src: '@/plugins/TransferDom', ssr: true },
-    { src: '@/plugins/ComponentLoader', ssr: true },
-    { src: '@/plugins/TimeLib', ssr: true },
-    { src: '@/plugins/Lazyload', ssr: false },
-    { src: '@/plugins/3rdAnalyze', ssr: false },
-    { src: '@/plugins/Toast', ssr: false }
+    { src: '@/plugins/Utils' },
+    { src: '@/plugins/HttpLib' },
+    { src: '@/plugins/TimeLib' },
+    { src: '@/plugins/ComponentLoader' },
+    { src: '@/plugins/TransferDom', mode: 'client' },
+    { src: '@/plugins/LazyLoad', mode: 'client' },
+    { src: '@/plugins/VueRouter', mode: 'client' },
+    { src: '@/plugins/Toast', mode: 'client' }
   ],
 
   /*
